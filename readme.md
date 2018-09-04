@@ -6,4 +6,4 @@
 
 
 ### Test 
-isql 
+into-> isql -v HOMO rpsr 'senha'
