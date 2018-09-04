@@ -63,6 +63,9 @@ CMD ["/start.sh"]
 #/bin/sed -i 's/$ODBC_SERVER/'$ODBC_SERVER'/g' /root/.odbc.ini
 #CMD ["/root/PAServer-19.0/paserver","-password=1234"]
 
+ENV ODBC_SERVER tcp:database,1401
+ENV ODBC_NAME BANCO
+ENV PASERVER_PASSWORD 1234
 
 # Publish PAServer default port
 EXPOSE 64211 8080
