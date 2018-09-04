@@ -51,11 +51,18 @@ RUN \
 #RUN rm /root/.odbc.ini
 COPY .odbc.ini /root/
 
+
 # Working directory
 WORKDIR /root/PAServer
 
 # Start PAServer
-CMD ["/root/PAServer-19.0/paserver","-password=1234"]
+#CMD sed -i 's/ODBC_SERVER/'$ODBC_SERVER'/g' /root/.odbc.ini
+COPY start.sh /start.sh
+CMD ["/start.sh"]
+# sed 's/\r$//' start.sh > start.sh
+#/bin/sed -i 's/$ODBC_SERVER/'$ODBC_SERVER'/g' /root/.odbc.ini
+#CMD ["/root/PAServer-19.0/paserver","-password=1234"]
+
 
 # Publish PAServer default port
 EXPOSE 64211 8080
