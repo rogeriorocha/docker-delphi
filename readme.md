@@ -1,5 +1,6 @@
 # Requires
-- [Docker](https://docs.docker.com/install/) instaled.
+- [Docker](https://docs.docker.com/install/) instaled. *With windows i recommend toolbox version*
+
 
 # Build image
 ```docker build -t rogeriosilvarocha/delphi-sample-odbc .```
