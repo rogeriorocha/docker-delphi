@@ -1,7 +1,3 @@
-```python
-s = "Python syntax highlighting"
-print s
-```
 
 
 # About
@@ -37,5 +33,12 @@ Enviroment variables:
 ## Test connection
 ```isql -v HOMO rpsr 'senha'```
 
+```sql
+select 1
+```
+
 # Build image
 ```docker build -t rogeriosilvarocha/delphi-sample-odbc .```
+
+
+
