@@ -63,7 +63,7 @@ docker build -t rogeriosilvarocha/delphi-sample-odbc .
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/rogeriorocha/delphi-sample-odbc/contributors) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/rogeriorocha/delphi-sample-odbc/contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -73,7 +73,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Rogerio Rocha** - *Initial work* - [RogerioRocha](https://github.com/rogeriorocha)
 
-See also the list of [contributors](https://github.com/delphi-sample-odbc/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rogeriorocha/delphi-sample-odbc/contributors) who participated in this project.
 
 ## License
 
