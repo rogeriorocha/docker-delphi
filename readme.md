@@ -1,3 +1,6 @@
+# Requires
+- [Docker](https://docs.docker.com/install/) instaled.
+
 # Build image
 ```docker build -t rogeriosilvarocha/delphi-sample-odbc .```
 
