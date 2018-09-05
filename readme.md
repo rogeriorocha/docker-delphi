@@ -1,10 +1,12 @@
 # About
 Conteiner Docker image:
 
-| item        | version |
-| ------------|---------|
-| SO Ubuntu   | 18.04   |
-| UnixODBC    | 17.0    |
+| item                 | version |
+| ---------------------|---------|
+| SO Ubuntu            | 18.04   |
+| unixODBC             | 2.3.4   |
+| SQL Server Driver    | 17.0    |
+
 
 # Requires
 - [Docker](https://docs.docker.com/install/). *With windows i recommend toolbox version*
