@@ -1,6 +1,6 @@
 # delphi-sample-odbc
 
-Conteiner Docker image
+Conteiner Docker image running Embarcadero RAD Studio PAServer (**P**latform **A**ssistant **S**erver **A**pplication) and unixODBC connection with SQL Server.
 
 ## Getting Started
 
