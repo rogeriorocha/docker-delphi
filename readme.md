@@ -12,7 +12,9 @@ Conteiner Docker image:
 - [Docker](https://docs.docker.com/install/). *With windows i recommend toolbox version*
 
 # run conteiner
-```docker run  --name delphi -p 64211:64211 -p 8080:8080 -t -i -e ODBC_SERVER=tcp:172.18.10.157,2001 -e ODBC_NAME=HOMO -e PASERVER_PASSWORD=1234 rogeriosilvarocha/delphi-sample-odbc```
+``` bash
+docker run  --name delphi -p 64211:64211 -p 8080:8080 -t -i -e ODBC_SERVER=tcp:172.18.10.157,2001 -e ODBC_NAME=HOMO -e PASERVER_PASSWORD=1234 rogeriosilvarocha/delphi-sample-odbc
+```
 
 Enviroment variables:
 
