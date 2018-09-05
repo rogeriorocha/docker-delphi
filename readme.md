@@ -1,6 +1,3 @@
-Install the dependencies and devDependencie
-
-
 # About
 Conteiner Docker image:
 
