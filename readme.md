@@ -1,6 +1,5 @@
 # Requires
-- [Docker](https://docs.docker.com/install/) instaled. *With windows i recommend toolbox version*
-
+- [Docker](https://docs.docker.com/install/). *With windows i recommend toolbox version*
 
 # Build image
 ```docker build -t rogeriosilvarocha/delphi-sample-odbc .```
@@ -12,5 +11,5 @@
 ## Enter conteiner via bash
 ```docker exec -it $(docker ps -f name=delphi -q) bash```
 
-## Test 
+## Test connection
 ```isql -v HOMO rpsr 'senha'```
