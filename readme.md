@@ -63,7 +63,7 @@ docker build -t rogeriosilvarocha/delphi-sample-odbc .
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/delphi-sample-odbc) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/rogeriorocha/delphi-sample-odbc/contributors) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
