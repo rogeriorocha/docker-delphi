@@ -11,6 +11,7 @@ Conteiner embledded with:
 | SO Ubuntu            | 18.04   |
 | unixODBC             | 2.3.4   |
 | SQL Server Driver    | 17.0    |
+| PAServer             | 19.0    |
 
 ### Prerequisites
 
