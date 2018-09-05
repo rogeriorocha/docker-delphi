@@ -9,4 +9,4 @@
 > docker exec -it $(docker ps -f name=delphi -q) bash
 
 ## Test 
-> into-> isql -v HOMO rpsr 'senha'
+> isql -v HOMO rpsr 'senha'
