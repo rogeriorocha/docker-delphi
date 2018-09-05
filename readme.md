@@ -71,7 +71,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Rogerio Rocha** - *Initial work* - [PurpleBooth](https://github.com/rogeriorocha)
+* **Rogerio Rocha** - *Initial work* - [RogerioRocha](https://github.com/rogeriorocha)
 
 See also the list of [contributors](https://github.com/delphi-sample-odbc/contributors) who participated in this project.
 
