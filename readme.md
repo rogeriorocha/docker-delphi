@@ -1,3 +1,4 @@
+Install the dependencies and devDependencie
 
 
 # About
@@ -14,8 +15,8 @@ Conteiner Docker image:
 - [Docker](https://docs.docker.com/install/). *With windows i recommend toolbox version*
 
 # run conteiner
-```Shell
-docker run  --name delphi -p 64211:64211 -p 8080:8080 -t -i -e ODBC_SERVER=tcp:172.18.10.157,2001 -e ODBC_NAME=HOMO -e PASERVER_PASSWORD=1234 rogeriosilvarocha/delphi-sample-odbc
+```sh
+$ docker run  --name delphi -p 64211:64211 -p 8080:8080 -t -i -e ODBC_SERVER=tcp:172.18.10.157,2001 -e ODBC_NAME=HOMO -e PASERVER_PASSWORD=1234 rogeriosilvarocha/delphi-sample-odbc
 ```
 
 Enviroment variables:
@@ -28,17 +29,15 @@ Enviroment variables:
 
 
 ## Enter conteiner via bash
-```docker exec -it $(docker ps -f name=delphi -q) bash```
+```sh
+$ docker exec -it $(docker ps -f name=delphi -q) bash
+```
 
 ## Test connection
-```isql -v HOMO rpsr 'senha'```
+```sh
+$ isql -v HOMO rpsr 'senha'
+```
 
 ```sql
 select 1
 ```
-
-# Build image
-```docker build -t rogeriosilvarocha/delphi-sample-odbc .```
-
-
-
