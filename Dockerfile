@@ -3,35 +3,31 @@ FROM ubuntu:18.04
 
 LABEL maintainer="rogeriosilvarocha@gmail.com"
 
-#ENV LANG pt_BR
-#ENV TZ 'America/Sao_Paulo'
-#RUN \
-# echo $TZ > /etc/timezone && \
-# apt-get update && apt-get install -y tzdata && \
-# rm /etc/localtime && \
-# ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
-# dpkg-reconfigure -f noninteractive tzdata && \
-# apt-get clean
+RUN \ 
+ apt-get -y update
 
+# config TZ 
+RUN \ 
+ apt-get -y install tzdata && \
+ ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
+ dpkg-reconfigure -f noninteractive tzdata 
 
-# Everything you need for RadStudio plus some utilities that may come in handy
+#  RadStudio utils
 RUN \
- apt-get -y update && \
  apt-get -y upgrade && \
  apt-get -y dist-upgrade && \
  apt-get -y install joe wget p7zip-full curl unzip build-essential zlib1g-dev libcurl4-gnutls-dev && \
- apt-get -y install mysecureshell && \
- apt-get -y autoremove && \
- apt-get -y autoclean 
+ apt-get -y install mysecureshell 
 
-# Copy PAServer to container and unzip it
+# PAServer Rad Studio
+WORKDIR /root/PAServer
+
 COPY LinuxPAServer19.0.tar.gz /root/LinuxPAServer19.0.tar.gz
 RUN \
  cd /root && \
  tar xzvf LinuxPAServer19.0.tar.gz && \
  cd PAServer-19.0 && \
- mkdir scratch-dir  && \
- apt-get clean
+ mkdir scratch-dir  
 
  # Microsoft ODBC  17
 RUN \
@@ -42,7 +38,7 @@ RUN \
  ACCEPT_EULA=Y apt-get -y install msodbcsql17 && \
  ACCEPT_EULA=Y apt-get -y install mssql-tools && \
  apt-get -y install unixodbc-dev && \
- apt-get -y install vim
+ apt-get -y install vim 
 
  #echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
 # echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
@@ -51,9 +47,9 @@ RUN \
 #RUN rm /root/.odbc.ini
 COPY .odbc.ini /root/
 
-
-# Working directory
-WORKDIR /root/PAServer
+RUN \ 
+ apt-get -y autoremove && \
+ apt-get -y autoclean 
 
 # Start PAServer
 #CMD sed -i 's/ODBC_SERVER/'$ODBC_SERVER'/g' /root/.odbc.ini
