@@ -2,6 +2,11 @@
 
 Conteiner Docker image running Embarcadero RAD Studio PAServer (**P**latform **A**ssistant **S**erver **A**pplication) and unixODBC connection with SQL Server.
 
+## docker image
+https://hub.docker.com/r/rogeriosilvarocha/delphi-sample-odbc/
+
+
+
 ## Getting Started
 
 Conteiner embledded with:
