@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-#FROM ubuntu:18.04
+#FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL maintainer="rogeriosilvarocha@gmail.com"
 
@@ -29,56 +29,20 @@ RUN \
  cd PAServer-19.0 && \
  mkdir scratch-dir  
 
-# Microsoft ODBC  17
-#RUN \
-# curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
-# curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \ 
-# apt-get -y install apt-transport-https && \
-# apt-get update && \
-#ACCEPT_EULA=Y apt-get -y install msodbcsql17 && \
-# ACCEPT_EULA=Y apt-get -y install mssql-tools && \
-# apt-get -y install unixodbc-dev && \
-#apt-get -y install vim 
+ # Microsoft ODBC  17
+RUN \
+ curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+ curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \ 
+ apt-get -y install apt-transport-https && \
+ apt-get update && \
+ ACCEPT_EULA=Y apt-get -y install msodbcsql17 && \
+ ACCEPT_EULA=Y apt-get -y install mssql-tools && \
+ apt-get -y install unixodbc-dev && \
+ apt-get -y install vim 
 
-#Other
-#echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
+ #echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
 # echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
 # source ~/.bashrc && \
-
-# Microsoft ODBC  11
-#COPY freetds-stable.tgz /root/freetds-stable.tgz
-#COPY msodbcsql-11.0.2270.0.tar.gz /root/msodbcsql-11.0.2270.0.tar.gz
-#RUN \
- #echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/mssql-ubuntu-xenial-release/ xenial main" > /etc/apt/sources.list.d/mssqlpreview.list && \
- #apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 && \
- #cd /usr/local && \
- #wget http://ibiblio.org/pub/Linux/ALPHA/freetds/stable/freetds-stable.tgz  && \
- #tar xvfz freetds-stable.tgz && \
- #cd freetds-0.82 && \
- #./configure --enable-msdblib --with-tdsver=8.0 --with-unixodbc=/usr 
- #make && \
- #make install && \
- #make clean 
-
-
-# Microsoft ODBC  13
-#RUN \
-# curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
-# curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
-# apt-get -y install apt-transport-https && \
-# apt-get update && \
-# ACCEPT_EULA=Y apt-get -y install msodbcsql && \
-# ACCEPT_EULA=Y apt-get -y install mssql-tools && \
-# apt-get -y install unixodbc-dev && \
-# apt-get -y install vim net-tools
-
-# optional: for bcp and sqlcmd
- 
-# echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
-# echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
-# source ~/.bashrc && \
-# optional: for unixODBC development headers
-
 
 #RUN rm /root/.odbc.ini
 COPY .odbc.ini /root/
