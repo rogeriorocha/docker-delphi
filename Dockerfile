@@ -54,6 +54,7 @@ RUN \
 # Start PAServer
 #CMD sed -i 's/ODBC_SERVER/'$ODBC_SERVER'/g' /root/.odbc.ini
 COPY start.sh /start.sh
+COPY deploy /deploy
 CMD ["/start.sh"]
 # sed 's/\r$//' start.sh > start.sh
 #/bin/sed -i 's/$ODBC_SERVER/'$ODBC_SERVER'/g' /root/.odbc.ini
@@ -62,6 +63,8 @@ CMD ["/start.sh"]
 ENV ODBC_SERVER tcp:database,1401
 ENV ODBC_NAME BANCO
 ENV PASERVER_PASSWORD 1234
+
+
 
 # Publish PAServer default port
 EXPOSE 64211 8080
